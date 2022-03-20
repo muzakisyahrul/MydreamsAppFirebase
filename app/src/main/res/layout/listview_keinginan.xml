@@ -1,0 +1,217 @@
+<LinearLayout android:id="@+id/layout_utama"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_list"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:elevation="4dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_weight="1.3"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvNama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/gotham_bold"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:textSize="15sp"
+                android:scrollHorizontally="true"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:lineSpacingExtra="5dp"
+                tools:text="Beli Tas Eiger"/>
+
+            <TextView
+                android:id="@+id/tvDeskripsi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:textSize="13sp"
+                android:scrollHorizontally="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:lineSpacingExtra="5dp"
+                tools:text="-"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:textSize="12sp"
+                    android:lineSpacingExtra="5dp"
+                    android:text="Harga : "/>
+
+                <TextView
+                    android:id="@+id/tvNominal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/gotham_bold"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:textSize="12sp"
+                    android:lineSpacingExtra="5dp"
+                    tools:text="Rp 20.000"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center|end"
+            android:paddingEnd="10dp"
+            android:layout_weight="0.7">
+
+            <ImageView
+                android:id="@+id/btnDelete"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_trash_red" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textSize="12sp"
+            android:lineSpacingExtra="5dp"
+            android:text="Terkumpul : "/>
+
+        <TextView
+            android:id="@+id/tvTerkumpul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/gotham_bold"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textSize="12sp"
+            android:lineSpacingExtra="5dp"
+            tools:text="Rp 20.000"/>
+    </LinearLayout>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="10dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progressDrawable="@drawable/custom_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="5dp" />
+
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:layout_marginBottom="5dp"-->
+<!--        android:background="#F3F2F2"/>-->
+
+    <LinearLayout
+        android:id="@+id/lnKurang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical"
+        android:layout_gravity="end"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textSize="12sp"
+            android:lineSpacingExtra="5dp"
+            android:text="Kurang "/>
+        <TextView
+            android:id="@+id/tvNominalCurrent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/gotham_bold"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textSize="12sp"
+            android:lineSpacingExtra="5dp"
+            tools:text="Rp 20.000"/>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lnTerpenuhi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical"
+        android:layout_gravity="end"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/ic_baseline_check_circle_24"
+            android:backgroundTint="@color/green"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:layout_marginEnd="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/green"
+            android:fontFamily="@font/gotham_bold"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textSize="12sp"
+            android:lineSpacingExtra="5dp"
+            android:text="Terpenuhi"/>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

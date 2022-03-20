@@ -1,0 +1,73 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MydreamsAppFirebase" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="colorControlNormal">@color/white</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="btnPrimary" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/btn_primary</item>
+        <item name="android:textColor">#FFF</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="editTextPrimary" parent="TextAppearance.AppCompat">
+        <item name="android:drawablePadding">15dp</item>
+        <item name="android:background">@drawable/bg_edit_text</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textColor">@color/black_light</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="btnPrimaryOutline" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/btn_primary_outline</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="btnRoundedRed" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/btn_rounded_red</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="btnRoundedGreen" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/btn_rounded_green</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="btnCircleRed" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/btn_circle_red</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="btnCircleGreen" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/btn_circle_green</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="btnCirclePrimary" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/btn_circle_primary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+</resources>

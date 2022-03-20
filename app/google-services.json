@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "539098696750",
+    "firebase_url": "https://mydreamsappfirebase-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "mydreamsappfirebase",
+    "storage_bucket": "mydreamsappfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539098696750:android:349ab16127b50cd69863bf",
+        "android_client_info": {
+          "package_name": "mobile.muzaki.mydreamsappfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "539098696750-g4a377iss5ar6983g5vi0a30gv3il33p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mobile.muzaki.mydreamsappfirebase",
+            "certificate_hash": "bdfa638e5d8eba43be1db68ee4000cb9043afcb8"
+          }
+        },
+        {
+          "client_id": "539098696750-ugad4ortrn56er9ujl23ogrojisq3r0v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdELdC0wwwKTdj-PSKgSYrmWrT23iqN9Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "539098696750-ugad4ortrn56er9ujl23ogrojisq3r0v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

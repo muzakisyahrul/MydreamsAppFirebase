@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:paddingBottom="60dp"
+    tools:context=".fragment.HomeFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/colorPrimary"/>
+
+            <LinearLayout
+                android:elevation="10dp"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_marginTop="100dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="50dp"
+                android:paddingBottom="40dp"
+                android:paddingHorizontal="20dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_nama_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/gotham_bold"
+                    tools:text="Muzaki Syahrul Karomah"/>
+                <TextView
+                    android:id="@+id/tv_email_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    tools:text="muzaki@gmail.com"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/btnLogout"
+                    style="@style/btnCircleRed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:textSize="18sp"
+                    android:text="Logout"/>
+
+            </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="80dp"
+                android:layout_marginTop="60dp"
+                android:layout_height="80dp"
+                app:cardElevation="20dp"
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="50dp">
+                <ImageView
+                    android:id="@+id/image_profil"
+                    android:scaleType="centerCrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </androidx.cardview.widget.CardView>
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>
