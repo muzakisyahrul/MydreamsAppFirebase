@@ -70,7 +70,7 @@ class KeinginanFragment : Fragment(), IOnBackPressed,View.OnClickListener {
 
                 override fun onUpdate(data: Keinginan) {
                     (activity as MainActivity).setHalaman(KeinginanAddFragment.newInstance(
-                        data.key,data.nama,data.deskripsi,data.harga.toString(),data.terpenuhi.toString()
+                        data.key,data.nama,data.deskripsi,data.harga.toString(),data.terpenuhi.toString(),data.alamat.toString(),data.jenis_kelamin.toString()
                     ))
                 }
 
@@ -127,7 +127,7 @@ class KeinginanFragment : Fragment(), IOnBackPressed,View.OnClickListener {
         if (v != null) {
             when (v.id) {
                 R.id.btnTambah -> {
-                    (activity as MainActivity).setHalaman(KeinginanAddFragment.newInstance("","","","",""))
+                    (activity as MainActivity).setHalaman(KeinginanAddFragment.newInstance("","","","","","",""))
                 }
             }
         }

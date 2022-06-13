@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
@@ -16,6 +17,7 @@ import mobile.muzaki.mydreamsappfirebase.Keinginan
 import mobile.muzaki.mydreamsappfirebase.MainActivity
 import mobile.muzaki.mydreamsappfirebase.R
 
+
 class KeinginanAddFragment : Fragment(),View.OnClickListener {
     private lateinit var helper: Helper
     private val TAG:String="KeinginanAddFragment"
@@ -26,18 +28,22 @@ class KeinginanAddFragment : Fragment(),View.OnClickListener {
     private val DESKRIPSI = "DESKRIPSI"
     private val HARGA = "HARGA"
     private val TERPENUHI = "TERPENUHI"
+    private val ALAMAT = "ALAMAT"
+    private val JENIS_KELAMIN = "JENIS_KELAMIN"
 
     private var id_keinginan = ""
     private var nama : String = ""
     private var deskripsi : String = ""
     private var harga : String = ""
     private var terpenuhi : String = ""
+    private var alamat : String = ""
+    private var jenis_kelamin : String = ""
 
 
 
     companion object {
         @JvmStatic
-        fun newInstance(param1: String?,param2: String?,param3: String?,param4: String?,param5: String?) =
+        fun newInstance(param1: String?,param2: String?,param3: String?,param4: String?,param5: String?,param6: String?,param7: String?) =
             KeinginanAddFragment().apply {
                 arguments = Bundle().apply {
                     if (param1 != null) {
@@ -46,6 +52,8 @@ class KeinginanAddFragment : Fragment(),View.OnClickListener {
                         putString(DESKRIPSI, param3)
                         putString(HARGA, param4)
                         putString(TERPENUHI, param5)
+                        putString(ALAMAT, param6)
+                        putString(JENIS_KELAMIN, param7)
                     }
                 }
             }
@@ -59,6 +67,8 @@ class KeinginanAddFragment : Fragment(),View.OnClickListener {
             deskripsi = it.getString(DESKRIPSI).toString()
             harga = it.getString(HARGA).toString()
             terpenuhi = it.getString(TERPENUHI).toString()
+            alamat = it.getString(ALAMAT).toString()
+            jenis_kelamin = it.getString(JENIS_KELAMIN).toString()
         }
         helper = Helper.newInstance(requireContext(),requireActivity())
         auth = FirebaseAuth.getInstance()
@@ -90,12 +100,23 @@ class KeinginanAddFragment : Fragment(),View.OnClickListener {
             if(!terpenuhi.isEmpty()){
                 etTerpenuhi.setText(helper.rupiah_koma(terpenuhi.toDouble()))
             }
+            etAlamat.setText(alamat)
+            when (jenis_kelamin) {
+                "L" -> {rgJenisKelamin.check(R.id.rbLaki)}
+                "P" -> {rgJenisKelamin.check(R.id.rbPerempuan)}
+            }
         }
         (activity as MainActivity).setSupportActionBar(app_toolbar)
         (activity as MainActivity).getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
         (activity as MainActivity).getSupportActionBar()?.setDisplayShowHomeEnabled(true)
         (activity as MainActivity).onSupportNavigateUp()
         btnSave!!.setOnClickListener(this)
+        rgJenisKelamin.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener { group, checkedId ->
+            when (checkedId) {
+                R.id.rbLaki -> {jenis_kelamin="L"}
+                R.id.rbPerempuan -> {jenis_kelamin="P"}
+            }
+        })
     }
 
     override fun onClick(v: View?) {
@@ -108,11 +129,14 @@ class KeinginanAddFragment : Fragment(),View.OnClickListener {
         }
     }
 
+
     private fun validasiInput() {
         nama = etNama.text.toString()
         deskripsi = etDeskripsi.text.toString()
         harga = helper.parse_rupiah(etHarga.text.toString()).toString()
         terpenuhi = helper.parse_rupiah(etTerpenuhi.text.toString()).toString()
+        alamat = helper.parse_rupiah(etAlamat.text.toString()).toString()
+
         when{
             nama.isEmpty() -> etNama.error = "Nama tidak boleh kosong"
             deskripsi.isEmpty() -> etDeskripsi.error = "Deskripsi tidak boleh kosong"
@@ -134,14 +158,14 @@ class KeinginanAddFragment : Fragment(),View.OnClickListener {
                 }
                 if(id_keinginan.isEmpty()) {
                     getReference.child(uuid).child("Keinginan").push()
-                        .setValue(Keinginan(nama, deskripsi, harga_fix, terpenuhi_fix))
+                        .setValue(Keinginan(nama, deskripsi, harga_fix, terpenuhi_fix,alamat,jenis_kelamin))
                         .addOnCompleteListener(requireActivity()) { //Peristiwa ini terjadi saat user berhasil menyimpan datanya kedalam Database
                             helper.tampilToast("Data Tersimpan")
                             (activity as MainActivity).onBackPressed()
                         }
                 }else{
                     getReference.child(uuid).child("Keinginan").child(id_keinginan)
-                        .setValue(Keinginan(nama, deskripsi, harga_fix, terpenuhi_fix))
+                        .setValue(Keinginan(nama, deskripsi, harga_fix, terpenuhi_fix,alamat,jenis_kelamin))
                         .addOnSuccessListener { //Peristiwa ini terjadi saat user berhasil menyimpan datanya kedalam Database
                             helper.tampilToast("Data Tersimpan")
                             (activity as MainActivity).onBackPressed()

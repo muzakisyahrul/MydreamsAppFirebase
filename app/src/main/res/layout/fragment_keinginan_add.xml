@@ -94,8 +94,47 @@
                         android:hint="Isikan Harga"
                         android:inputType="textCapWords"/>
                 </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="5dp"
+                    android:text="Alamat"/>
 
-                <androidx.appcompat.widget.AppCompatButton
+                <EditText
+                    android:id="@+id/etAlamat"
+                    style="@style/editTextPrimary"
+                    android:layout_marginBottom="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tulis Alamat"
+                    android:minLines="3"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="5dp"
+                    android:text="Jenis Kelamin"/>
+
+                <RadioGroup
+                    android:id="@+id/rgJenisKelamin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <RadioButton android:id="@+id/rbLaki"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Laki-laki"/>
+                    <RadioButton android:id="@+id/rbPerempuan"
+                        android:layout_marginStart="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Perempuan"/>
+                </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnSave"
                     android:layout_marginTop="15dp"
                     style="@style/btnCirclePrimary"
